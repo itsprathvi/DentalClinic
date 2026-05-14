@@ -250,7 +250,9 @@
             <p class="section-subtitle">We'd love to help you achieve your brightest smile</p>
 
             <div class="appointment-container">
-                <form class="appointment-form">
+                <form class="appointment-form" name="SmileCare" action="https://formspree.io/f/mrejvwlr" method="POST">
+                    <input type="hidden" name="_subject" value="New Appointment Request from SmileCare Dental Clinic">
+                    <input type="hidden" id="replyto" name="_replyto" value="">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>

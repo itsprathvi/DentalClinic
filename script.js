@@ -43,60 +43,37 @@ tabButtons.forEach(button => {
     });
 });
 
-// Form Submission Handler
+// Form Submission Handler (Formspree)
 const appointmentForm = document.querySelector('.appointment-form');
 if (appointmentForm) {
     appointmentForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Get form values
+        // Get form values for validation
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
         const branch = document.getElementById('branch').value;
         const treatment = document.getElementById('treatment').value;
-        const message = document.getElementById('message').value;
 
         // Validate form
         if (!name || !email || !phone || !branch || !treatment) {
+            e.preventDefault();
             alert('Please fill in all required fields');
             return;
         }
 
-        // Get branch phone number and email
-        let branchPhone = '';
-        let clinicEmail = '';
-
-        if (branch === 'ajekar') {
-            branchPhone = '+91-9876-543-210';
-            clinicEmail = 'ajekar@smilecare.in';
-        } else if (branch === 'bailur') {
-            branchPhone = '+91-9876-543-211';
-            clinicEmail = 'bailur@smilecare.in';
+        // Set reply-to from the submitted email so Formspree can route replies correctly
+        const replyToInput = document.getElementById('replyto');
+        if (replyToInput) {
+            replyToInput.value = email;
         }
 
-        // Create appointment details
-        const appointmentDetails = `
-Appointment Request:
-====================
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Branch: ${branch.toUpperCase()}
-Treatment: ${treatment}
-Message: ${message}
-
-Please contact ${name} at ${phone} to confirm the appointment.
-        `;
-
-        // Log the details (in real app, this would be sent to server)
-        console.log(appointmentDetails);
-
         // Show success message
-        showNotification('Appointment request submitted! We will contact you shortly.', 'success');
+        showNotification('✅ Appointment request submitted! We will contact you shortly.', 'success');
 
-        // Reset form
-        appointmentForm.reset();
+        // Log the submission
+        console.log(`Appointment request from ${name} for ${treatment} submitted to Formspree with reply-to ${email}`);
+
+        // Form will submit to Formspree automatically (don't prevent default)
     });
 }
 
