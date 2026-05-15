@@ -7,7 +7,7 @@ const clinicConfig = {
     // Clinic Branding
     branding: {
         name: "SmileCare",
-        subheading: "Premium Dental Care",
+        subheading: "Premium Dental Care at Your Convenience",
         tagline: "Your Smile, Our Priority",
         subtitle: "Modern Dental Healthcare"
     },
@@ -22,14 +22,13 @@ const clinicConfig = {
 
     // AJEKAR BRANCH
     ajekarBranch: {
-        name: "Ajekar Branch",
-        address: "Ajekar Main Road, Ajekar, [State] - [Postal Code], India",
-        phone: "+91-9876-543-210",
-        email: "ajekar@smilecare.in",
+        name: "Ajekar Dental Clinic",
+        address: "1st floor, Ajekar commercial and residential complex, Ajekar junction, Karkala main road, Ajekar Udupi - 574101",
+        phone: "+917019547647",
+        email: "Ajekardentalclinic2026@gmail.com",
         hours: {
-            weekdays: "9:00 AM - 8:00 PM",
-            saturday: "9:00 AM - 8:00 PM",
-            sunday: "10:00 AM - 5:00 PM"
+            weekdays: "9:00 AM - 1:00 PM, 3:00 PM - 7:00 PM",
+            sunday: "Appointments only"
         },
         coordinates: {
             lat: 15.4,
@@ -39,25 +38,24 @@ const clinicConfig = {
 
     // BAILUR BRANCH
     bailurBranch: {
-        name: "Bailur Branch",
-        address: "Bailur Commercial Square, Bailur, [State] - [Postal Code], India",
-        phone: "+91-9876-543-211",
-        email: "bailur@smilecare.in",
+        name: "Bailur Dental Clinic",
+        address: "Sai Samruddi Apartment, Palli cross junction, Karkala taluk, Udupi district - 574102",
+        phone: "+917892852071",
+        email: "Bailurdentalclinic2025@gmail.com",
         hours: {
-            weekdays: "9:00 AM - 9:00 PM",
-            saturday: "9:00 AM - 9:00 PM",
-            sunday: "10:00 AM - 5:00 PM"
+            weekdays: "9:00 AM - 1:00 PM, 3:00 PM - 7:00 PM",
+            sunday: "Appointments only"
         },
         coordinates: {
-            lat: 15.3,
-            lng: 75.5
+            lat: 13.2835557495108,
+            lng: 74.915854637345
         }
     },
 
     // General Contact
     generalContact: {
-        mainEmail: "info@smilecare.in",
-        appointmentEmail: "appointments@smilecare.in",
+        mainEmail: "Bailurdentalclinic2025@gmail.com",
+        appointmentEmail: "Bailurdentalclinic2025@gmail.com",
         supportEmail: "support@smilecare.in"
     },
 
@@ -150,16 +148,118 @@ const clinicConfig = {
         }
     ],
 
-    // Business Hours
-    businessHours: {
-        monday: "9:00 AM - 8:00 PM",
-        tuesday: "9:00 AM - 8:00 PM",
-        wednesday: "9:00 AM - 8:00 PM",
-        thursday: "9:00 AM - 8:00 PM",
-        friday: "9:00 AM - 8:00 PM",
-        saturday: "9:00 AM - 8:00 PM",
-        sunday: "10:00 AM - 5:00 PM",
-        holidays: ["Jan 26", "Mar 8", "Aug 15", "Oct 2", "Dec 25"]
+    // Page Sections & Content
+    pages: {
+        home: {
+            title: "Our Clinics",
+            subtitle: "Visit us at one of our two conveniently located branches"
+        },
+        treatments: {
+            title: "Our Treatments",
+            subtitle: "Comprehensive dental care services available at both locations"
+        },
+        gallery: {
+            title: "Our Gallery",
+            subtitle: "Explore our modern clinic facilities and spaces"
+        },
+        contact: {
+            title: "Schedule Your Appointment",
+            subtitle: "We'd love to help you achieve your brightest smile"
+        }
+    },
+
+    // Gallery Categories
+    galleryCategories: [
+        { value: "all", label: "All" },
+        { value: "clinic", label: "Clinic" },
+        { value: "equipment", label: "Equipment" },
+        { value: "team", label: "Team" }
+    ],
+
+    // Form Configuration
+    form: {
+        namesLabel: "Full Name",
+        emailLabel: "Email Address",
+        phoneLabel: "Phone Number",
+        branchLabel: "Select Branch",
+        treatmentLabel: "Treatment Required",
+        messageLabel: "Additional Message",
+        messagePlaceholder: "Tell us about your concern...",
+        submitButton: "Request Appointment",
+        required: "*",
+        formAction: "https://formspree.io/f/mrejvwlr",
+        subjectLine: "New Appointment Request from {clinicName} Dental Clinic",
+        treatmentOptions: [
+            { value: "general", label: "General Checkup" },
+            { value: "cleaning", label: "Teeth Cleaning" },
+            { value: "whitening", label: "Teeth Whitening" },
+            { value: "filling", label: "Filling" },
+            { value: "root-canal", label: "Root Canal" },
+            { value: "implant", label: "Implant" },
+            { value: "braces", label: "Braces/Aligners" },
+            { value: "other", label: "Other" }
+        ]
+    },
+
+    // Footer Content
+    footer: {
+        about: "Providing exceptional dental care with modern technology and compassionate service to both Ajekar and Bailur communities since 2020.",
+        quickLinks: [
+            { label: "Home", href: "#home" },
+            { label: "Branches", href: "#branches" },
+            { label: "Treatments", href: "#treatments" },
+            { label: "Gallery", href: "#gallery" },
+            { label: "Contact", href: "#contact" },
+            { label: "Developed By", href: "#developer" }
+        ],
+        services: [
+            { label: "General Dentistry", href: "#treatments" },
+            { label: "Cosmetic Care", href: "#treatments" },
+            { label: "Orthodontics", href: "#treatments" },
+            { label: "Implants", href: "#treatments" }
+        ],
+        copyright: "2026",
+        copyrightText: "SmileCare Dental Clinic. All rights reserved.",
+        legalLinks: [
+            { label: "Privacy Policy", href: "#" },
+            { label: "Terms of Service", href: "#" }
+        ]
+    },
+
+    // Quick Contact Hours
+    quickContact: {
+        hoursTitle: "Working Hours",
+        hoursWeekday: "Mon-Sat: 9:00 AM - 1:00 PM and 3:00 PM - 7:00 PM",
+        hoursSunday: "Sun: Appointments Only",
+    },
+
+    // Navigation
+    navigation: {
+        navItems: [
+            { label: "Home", href: "#home" },
+            { label: "Our Branches", href: "#branches" },
+            { label: "Treatments", href: "#treatments" },
+            { label: "Gallery", href: "#gallery" },
+            { label: "Contact", href: "#contact" },
+            { label: "Developed By", href: "#developer" }
+        ]
+    },
+
+    // Developer Info
+    developer: {
+        sectionTitle: "Developed By",
+        sectionSubtitle: "Meet the creator behind this website",
+        name: "Prathviraj Prabhu",
+        title: "Full Stack Web Developer",
+        photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+        description: "Passionate developer building modern web experiences with clean code, strong UI design, and seamless performance.",
+        instagram: "https://instagram.com/its.prathvi",
+        instagramHandle: "@its.prathvi",
+        qualification: "B.Tech in Information Science",
+        company: "Qualcomm",
+        email: "prathvirajbellampalli@gmail.com",
+        skills: ["HTML", "CSS", "JavaScript", "React", "UI/UX"],
+        location: "Bangalore, India"
     },
 
     // Website Meta

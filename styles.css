@@ -386,6 +386,7 @@ section {
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition: var(--transition);
+    opacity: 1;
     aspect-ratio: 1;
 }
 
