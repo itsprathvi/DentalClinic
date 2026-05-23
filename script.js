@@ -35,6 +35,9 @@ function populatePageFromConfig() {
         'bailurMap'
     );
 
+    // 2.5 Director Information
+    populateDirector();
+
     // 3. Page Sections
     populateSectionTitles();
 
@@ -321,6 +324,26 @@ function populateBranchInfo(branchKey, branchData, nameId, addressId, phoneId, e
     if (mapEl && branchData.coordinates) {
         const mapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.289851947614!2d${branchData.coordinates.lng}!3d${branchData.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0!2s${encodeURIComponent(branchData.name)}!5e0!3m2!1sen!2sin!4v1234567890`;
         mapEl.src = mapSrc;
+    }
+}
+
+// Populate director information
+function populateDirector() {
+    const directorImage = document.getElementById('directorImage');
+    // const directorName = document.getElementById('directorName');
+    const directorDesignation = document.getElementById('directorDesignation');
+    const directorExperience = document.getElementById('directorExperience');
+    const directorQuote = document.getElementById('directorQuote');
+
+    if (clinicConfig.director) {
+        if (directorImage) {
+            directorImage.src = clinicConfig.director.image;
+            directorImage.alt = clinicConfig.director.name;
+        }
+        // if (directorName) directorName.textContent = clinicConfig.director.name;
+        if (directorDesignation) directorDesignation.textContent = clinicConfig.director.designation;
+        if (directorExperience) directorExperience.textContent = `${clinicConfig.director.yearsOfExperience} Years of Experience`;
+        if (directorQuote) directorQuote.textContent = clinicConfig.director.quote;
     }
 }
 

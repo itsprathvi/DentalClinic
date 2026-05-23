@@ -6,7 +6,7 @@
 const clinicConfig = {
     // Clinic Branding
     branding: {
-        name: "SmileCare",
+        name: "Prabhu's Healthcare",
         subheading: "Premium Dental Care at Your Convenience",
         tagline: "Your Smile, Our Priority",
         subtitle: "Modern Dental Healthcare"
@@ -31,8 +31,8 @@ const clinicConfig = {
             sunday: "Appointments only"
         },
         coordinates: {
-            lat: 15.4,
-            lng: 75.3
+            lat: 13.3216817,
+            lng: 74.997926
         }
     },
 
@@ -52,11 +52,20 @@ const clinicConfig = {
         }
     },
 
+    // DIRECTOR INFORMATION
+    director: {
+        // name: "Dr. Shravan Prabhu",
+        designation: "Founder & Director",
+        image: "./images/director.jpg",
+        quote: "At Our Dental clinic, we believe that every patient deserves exceptional dental care delivered with compassion and expertise. Our mission is to transform smiles and build lasting relationships with our patients. We are committed to using the latest technology and techniques to ensure the best outcomes for your oral health.",
+        yearsOfExperience: "8+"
+    },
+
     // General Contact
     generalContact: {
         mainEmail: "Bailurdentalclinic2025@gmail.com",
         appointmentEmail: "Bailurdentalclinic2025@gmail.com",
-        supportEmail: "support@smilecare.in"
+        supportEmail: "Bailurdentalclinic2025@gmail.com"
     },
 
     // Services/Treatments
@@ -117,32 +126,32 @@ const clinicConfig = {
     // Gallery Images (Add your image URLs here)
     gallery: [
         {
-            url: "https://images.unsplash.com/photo-1606768666260-e637b99daf71?w=400&h=300&fit=crop",
+            url: "./images/reception.jpg",
             caption: "Modern Reception Area",
             category: "clinic"
         },
         {
-            url: "https://images.unsplash.com/photo-1631217314989-5e6b5d6d02b0?w=400&h=300&fit=crop",
+            url: "./images/machine2.jpg",
             caption: "Advanced Equipment",
             category: "equipment"
         },
         {
-            url: "https://images.unsplash.com/photo-1606768666260-e637b99daf71?w=400&h=300&fit=crop",
+            url: "./images/equipments.jpg",
             caption: "Treatment Room",
             category: "clinic"
         },
         {
-            url: "https://images.unsplash.com/photo-1612529423318-4c0416f4e697?w=400&h=300&fit=crop",
+            url: "./images/director2.jpg",
             caption: "Our Professional Team",
             category: "team"
         },
         {
-            url: "https://images.unsplash.com/photo-1576091160550-112173f31c77?w=400&h=300&fit=crop",
+            url: "./images/equipments2.jpg",
             caption: "State-of-the-art Equipment",
             category: "equipment"
         },
         {
-            url: "https://images.unsplash.com/photo-1631217314989-5e6b5d6d02b0?w=400&h=300&fit=crop",
+            url: "./images/waiting.jpg",
             caption: "Comfortable Waiting Area",
             category: "clinic"
         }
@@ -206,11 +215,11 @@ const clinicConfig = {
         about: "Providing exceptional dental care with modern technology and compassionate service to both Ajekar and Bailur communities since 2020.",
         quickLinks: [
             { label: "Home", href: "#home" },
+            { label: "Director", href: "#director" },
             { label: "Branches", href: "#branches" },
             { label: "Treatments", href: "#treatments" },
             { label: "Gallery", href: "#gallery" },
-            { label: "Contact", href: "#contact" },
-            { label: "Developed By", href: "#developer" }
+            { label: "Contact", href: "#contact" }
         ],
         services: [
             { label: "General Dentistry", href: "#treatments" },
@@ -219,7 +228,7 @@ const clinicConfig = {
             { label: "Implants", href: "#treatments" }
         ],
         copyright: "2026",
-        copyrightText: "SmileCare Dental Clinic. All rights reserved.",
+        copyrightText: "Prabhu's Healthcare. All rights reserved.",
         legalLinks: [
             { label: "Privacy Policy", href: "#" },
             { label: "Terms of Service", href: "#" }
@@ -237,11 +246,11 @@ const clinicConfig = {
     navigation: {
         navItems: [
             { label: "Home", href: "#home" },
-            { label: "Our Branches", href: "#branches" },
+            { label: "Director", href: "#director" },
+            { label: "Branches", href: "#branches" },
             { label: "Treatments", href: "#treatments" },
             { label: "Gallery", href: "#gallery" },
-            { label: "Contact", href: "#contact" },
-            { label: "Developed By", href: "#developer" }
+            { label: "Contact", href: "#contact" }
         ]
     },
 
@@ -251,23 +260,24 @@ const clinicConfig = {
         sectionSubtitle: "Meet the creator behind this website",
         name: "Prathviraj Prabhu",
         title: "Full Stack Web Developer",
-        photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+        photo: "./images/developer.jpg",
         description: "Passionate developer building modern web experiences with clean code, strong UI design, and seamless performance.",
         instagram: "https://instagram.com/its.prathvi",
         instagramHandle: "@its.prathvi",
-        qualification: "B.Tech in Information Science",
-        company: "Qualcomm",
+        linkedin: "https://www.linkedin.com/in/prathviraj-prabhu-430123193/",
+        qualification: "B.Tech in Information Science and Engineering",
+        company: "Qualcomm, Bangalore",
         email: "prathvirajbellampalli@gmail.com",
-        skills: ["HTML", "CSS", "JavaScript", "React", "UI/UX"],
-        location: "Bangalore, India"
+        location: "Udupi, India",
+        portfolio: "https://prathviraj-prabhu-portfolio.netlify.app/"
     },
 
     // Website Meta
     meta: {
-        title: "SmileCare Dental Clinic - Modern Dental Healthcare",
+        title: "Prabhu's Healthcare - Modern Dental Healthcare",
         description: "Professional dental care at two conveniently located branches in Ajekar and Bailur",
         keywords: "dental clinic, dentist, dental care, teeth cleaning, orthodontics, implants",
-        author: "SmileCare Dental",
+        author: "Prabhu's Healthcare",
         language: "en"
     }
 };

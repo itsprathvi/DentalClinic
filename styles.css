@@ -75,6 +75,11 @@ body {
     gap: 2rem;
 }
 
+.small-text {
+  font-size: 20px;
+}
+
+
 .nav-link {
     color: white;
     text-decoration: none;
@@ -202,7 +207,7 @@ section {
     font-size: 2.8rem;
     text-align: center;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -291,6 +296,142 @@ section {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== DIRECTOR SECTION ========== */
+.director {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 4rem 0;
+}
+
+.director-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.director-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.director-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.director-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(0, 102, 204, 0.2);
+}
+
+.director-info {
+    padding: 2rem 0;
+}
+
+.director-name {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.director-designation {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.director-experience {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.director-quote {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    font-style: italic;
+}
+
+/* Coming Soon Card */
+.branch-card.coming-soon {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f1ff 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    text-align: center;
+    border: 2px dashed var(--primary-color);
+}
+
+.branch-card.coming-soon:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 102, 204, 0.15);
+}
+
+.coming-soon-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.coming-soon-text {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.coming-soon-badge {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.coming-soon-subtext {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.branch-card.coming-soon .branch-header {
+    width: 100%;
+    background: transparent;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.branch-card.coming-soon .branch-header i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.branch-card.coming-soon .branch-header h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
 }
 
 /* ========== TREATMENTS SECTION ========== */
@@ -662,6 +803,19 @@ section {
 
     .appointment-container {
         grid-template-columns: 1fr;
+    }
+
+    .director-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .director-name {
+        font-size: 2rem;
+    }
+
+    .director-image img {
+        max-width: 300px;
     }
 
     .hero {
