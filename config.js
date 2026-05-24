@@ -132,10 +132,22 @@ const clinicConfig = {
             image: "./images/maduri.jpeg",
             qualification: "BDS, MDS"
         },
-                {
-            name: "Dr. Supriya",
+        {
+            name: "Dr. Supriya Nayak",
             specialization: "Physiotherapy",
             image: "./images/supriya.jpeg",
+            qualification: "PT, BPT"
+        },
+        {
+            name: "Dr. Raksha Prabhu",
+            specialization: "Periodontist",
+            image: "./images/raksha.jpeg",
+            qualification: "BDS, MDS"
+        },
+        {
+            name: "Dr. Annapoorna",
+            specialization: "Endodontics",
+            image: "./images/Annapoorna.jpg",
             qualification: "BDS, MDS"
         }
     ],
@@ -144,13 +156,13 @@ const clinicConfig = {
     testimonials: [
         {
             name: "Rahul",
-            image: "./images/rahul.jpeg",
+            image: "./images/Rahul.jpeg",
             rating: 5,
             experience: "Dr. Shravan provided excellent dental care. The treatment was painless and the results exceeded my expectations. Highly recommended!"
         },
         {
-            name: "Shreyas Nayak",
-            image: "./images/shreyas.jpeg",
+            name: "Sampath Kamath",
+            image: "./images/Sampath.jpeg",
             rating: 5,
             experience: "Best dental clinic in Udupi! Professional staff, modern equipment, and outstanding service. My teeth look amazing now!"
         },
@@ -158,11 +170,11 @@ const clinicConfig = {
             name: "Pallavi Prabhu",
             image: "./images/pallavi.jpeg",
             rating: 5,
-            experience: "Great experience at Bailur. Dr. Anjali is very professional and explains everything clearly. Would definitely visit again."
+            experience: "Great experience at Bailur. Dr. Supriya is very professional and explains everything clearly. Would definitely visit again."
         },
         {
-            name: "Vaibhav Prabhu",
-            image: "./images/vaibhav.jpeg",
+            name: "Shreyas Nayak",
+            image: "./images/Shreyas.jpeg",
             rating: 5,
             experience: "Exceptional orthodontic treatment in Ajekar! The team is friendly and the clinic is very clean. Worth every penny!"
         }
