@@ -41,28 +41,34 @@ function populatePageFromConfig() {
     // 3. Page Sections
     populateSectionTitles();
 
-    // 4. Treatments
+    // 4. Surgeons
+    populateSurgeons();
+
+    // 5. Treatments
     populateTreatments();
 
-    // 5. Gallery
+    // 6. Gallery
     populateGallery();
 
-    // 6. Form
+    // 7. Testimonials
+    populateTestimonials();
+
+    // 8. Form
     populateForm();
 
-    // 7. Branch Dropdown
+    // 9. Branch Dropdown
     populateBranchDropdown();
 
-    // 8. Quick Contact
+    // 10. Quick Contact
     populateQuickContact();
 
-    // 9. Footer
+    // 11. Footer
     populateFooter();
 
-    // 10. Social Links
+    // 12. Social Links
     populateSocialLinks();
 
-    // 11. Observe elements for animations
+    // 13. Observe elements for animations
     observeAnimationElements();
 
     console.log('✅ Page populated from config.js');
@@ -93,6 +99,10 @@ function populateSectionTitles() {
     const treatmentsSubtitle = document.getElementById('treatmentsSubtitle');
     const galleryTitle = document.getElementById('galleryTitle');
     const gallerySubtitle = document.getElementById('gallerySubtitle');
+    const surgeonsTitle = document.getElementById('surgeonsTitle');
+    const surgeonsSubtitle = document.getElementById('surgeonsSubtitle');
+    const testimonialsTitle = document.getElementById('testimonialsTitle');
+    const testimonialsSubtitle = document.getElementById('testimonialsSubtitle');
     const contactTitle = document.getElementById('contactTitle');
     const contactSubtitle = document.getElementById('contactSubtitle');
 
@@ -102,6 +112,10 @@ function populateSectionTitles() {
     if (treatmentsSubtitle) treatmentsSubtitle.textContent = clinicConfig.pages.treatments.subtitle;
     if (galleryTitle) galleryTitle.textContent = clinicConfig.pages.gallery.title;
     if (gallerySubtitle) gallerySubtitle.textContent = clinicConfig.pages.gallery.subtitle;
+    if (surgeonsTitle) surgeonsTitle.textContent = clinicConfig.pages.surgeons.title;
+    if (surgeonsSubtitle) surgeonsSubtitle.textContent = clinicConfig.pages.surgeons.subtitle;
+    if (testimonialsTitle) testimonialsTitle.textContent = clinicConfig.pages.testimonials.title;
+    if (testimonialsSubtitle) testimonialsSubtitle.textContent = clinicConfig.pages.testimonials.subtitle;
     if (contactTitle) contactTitle.textContent = clinicConfig.pages.contact.title;
     if (contactSubtitle) contactSubtitle.textContent = clinicConfig.pages.contact.subtitle;
 }
@@ -172,6 +186,53 @@ function populateGallery() {
     populateGalleryItems();
     // Attach filter logic AFTER both tabs and items are created
     attachGalleryFilterLogic();
+}
+
+// Populate surgeons section
+function populateSurgeons() {
+    const surgeonsGrid = document.getElementById('surgeonsGrid');
+    if (!surgeonsGrid) return;
+    
+    surgeonsGrid.innerHTML = '';
+    
+    clinicConfig.surgeons.forEach(surgeon => {
+        const card = document.createElement('div');
+        card.className = 'surgeon-card';
+        card.innerHTML = `
+            <img src="${surgeon.image}" alt="${surgeon.name}" class="surgeon-image">
+            <div class="surgeon-info">
+                <div class="surgeon-name">${surgeon.name}</div>
+                <div class="surgeon-specialization">${surgeon.specialization}</div>
+                <div class="surgeon-qualification">${surgeon.qualification}</div>
+            </div>
+        `;
+        surgeonsGrid.appendChild(card);
+    });
+}
+
+// Populate testimonials section
+function populateTestimonials() {
+    const testimonialsScroll = document.getElementById('testimonialsScroll');
+    if (!testimonialsScroll) return;
+    
+    testimonialsScroll.innerHTML = '';
+    
+    clinicConfig.testimonials.forEach(testimonial => {
+        const card = document.createElement('div');
+        card.className = 'testimonial-card';
+        const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
+        card.innerHTML = `
+            <div class="testimonial-header">
+                <img src="${testimonial.image}" alt="${testimonial.name}" class="testimonial-avatar">
+                <div class="testimonial-author">
+                    <div class="testimonial-name">${testimonial.name}</div>
+                    <div class="testimonial-stars">${stars}</div>
+                </div>
+            </div>
+            <p class="testimonial-text">${testimonial.experience}</p>
+        `;
+        testimonialsScroll.appendChild(card);
+    });
 }
 
 // Populate form labels and options
@@ -694,5 +755,54 @@ styleSheet.textContent = `
     }
 `;
 document.head.appendChild(styleSheet);
+
+// ============================================
+// THEME TOGGLE - DARK MODE / LIGHT MODE
+// ============================================
+
+// Initialize theme from localStorage
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        updateThemeIcon(true);
+    } else {
+        document.body.classList.remove('dark-mode');
+        updateThemeIcon(false);
+    }
+}
+
+// Update theme icon based on current mode
+function updateThemeIcon(isDarkMode) {
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        const icon = themeToggle.querySelector('i');
+        if (isDarkMode) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
+}
+
+// Toggle theme function
+function toggleTheme() {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    updateThemeIcon(isDarkMode);
+}
+
+// Attach theme toggle button event listener
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+});
+
+// Initialize theme on page load
+window.addEventListener('load', initializeTheme);
 
 console.log('SmileCare Dental - Website Loaded Successfully! ✨');

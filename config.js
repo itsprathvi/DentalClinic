@@ -8,7 +8,7 @@ const clinicConfig = {
     branding: {
         name: "Prabhu's Healthcare",
         subheading: "Premium Dental Care at Your Convenience",
-        tagline: "Your Smile, Our Priority",
+        tagline: "Your Smile, Our Care",
         subtitle: "Modern Dental Healthcare"
     },
 
@@ -112,6 +112,62 @@ const clinicConfig = {
         }
     ],
 
+    // Surgeons/Doctors Information
+    surgeons: [
+        {
+            name: "Dr. Tejkran shetty",
+            specialization: "Oral and Maxillofacial Surgeon & Implantologist",
+            image: "./images/tejkar.jpeg",
+            qualification: "BDS, MDS"
+        },
+        {
+            name: "Dr. Chetana",
+            specialization: "Orthodontist",
+            image: "./images/chetana.jpeg",
+            qualification: "BDS, MDS"
+        },
+        {
+            name: "Dr. Madhuri Bhat",
+            specialization: "Prosthodontist",
+            image: "./images/maduri.jpeg",
+            qualification: "BDS, MDS"
+        },
+                {
+            name: "Dr. Supriya",
+            specialization: "Physiotherapy",
+            image: "./images/supriya.jpeg",
+            qualification: "BDS, MDS"
+        }
+    ],
+
+    // Testimonials/Client Feedback
+    testimonials: [
+        {
+            name: "Rahul",
+            image: "./images/rahul.jpeg",
+            rating: 5,
+            experience: "Dr. Shravan provided excellent dental care. The treatment was painless and the results exceeded my expectations. Highly recommended!"
+        },
+        {
+            name: "Shreyas Nayak",
+            image: "./images/shreyas.jpeg",
+            rating: 5,
+            experience: "Best dental clinic in Udupi! Professional staff, modern equipment, and outstanding service. My teeth look amazing now!"
+        },
+        {
+            name: "Pallavi Prabhu",
+            image: "./images/pallavi.jpeg",
+            rating: 5,
+            experience: "Great experience at Bailur. Dr. Anjali is very professional and explains everything clearly. Would definitely visit again."
+        },
+        {
+            name: "Vaibhav Prabhu",
+            image: "./images/vaibhav.jpeg",
+            rating: 5,
+            experience: "Exceptional orthodontic treatment in Ajekar! The team is friendly and the clinic is very clean. Worth every penny!"
+        }
+    ],
+
     // Color Scheme
     colors: {
         primary: "#0066cc",
@@ -163,6 +219,10 @@ const clinicConfig = {
             title: "Our Clinics",
             subtitle: "Visit us at one of our two conveniently located branches"
         },
+        surgeons: {
+            title: "Our Expert Surgeons",
+            subtitle: "Meet our highly qualified dental professionals"
+        },
         treatments: {
             title: "Our Treatments",
             subtitle: "Comprehensive dental care services available at both locations"
@@ -170,6 +230,10 @@ const clinicConfig = {
         gallery: {
             title: "Our Gallery",
             subtitle: "Explore our modern clinic facilities and spaces"
+        },
+        testimonials: {
+            title: "Client Testimonials",
+            subtitle: "Hear what our satisfied patients have to say"
         },
         contact: {
             title: "Schedule Your Appointment",

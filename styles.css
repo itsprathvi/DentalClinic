@@ -5,16 +5,45 @@
 }
 
 :root {
+    /* Primary Colors */
     --primary-color: #0066cc;
     --secondary-color: #00d4ff;
     --accent-color: #ff6b9d;
     --dark-bg: #0a1428;
     --light-bg: #f8f9fa;
-    --text-dark: #1a1a1a;
-    --text-light: #666;
+    
+    /* Light Mode */
+    --bg-light: #ffffff;
+    --text-light-mode: #1a1a1a;
+    --text-light-muted: #666;
+    --card-bg-light: #f8f9fa;
+    --border-light: #e0e0e0;
+    
+    /* Dark Mode */
+    --bg-dark: #0a1428;
+    --text-dark-mode: #f0f0f0;
+    --text-dark-muted: #a8a8a8;
+    --card-bg-dark: #1a2e4a;
+    --border-dark: #2a4a6a;
+    
+    /* Current Theme (Light by default) */
+    --bg-color: var(--bg-light);
+    --text-color: var(--text-light-mode);
+    --text-muted: var(--text-light-muted);
+    --card-bg: var(--card-bg-light);
+    --border-color: var(--border-light);
+    
     --border-radius: 15px;
     --box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    --bg-color: var(--bg-dark);
+    --text-color: var(--text-dark-mode);
+    --text-muted: var(--text-dark-muted);
+    --card-bg: var(--card-bg-dark);
+    --border-color: var(--border-dark);
 }
 
 html {
@@ -23,9 +52,10 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-dark);
-    background-color: #fff;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     line-height: 1.6;
+    transition: var(--transition);
 }
 
 .container {
@@ -121,6 +151,26 @@ body {
     transition: var(--transition);
 }
 
+/* ========== THEME TOGGLE ========== */
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem 0.8rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
 /* ========== HERO SECTION ========== */
 .hero {
     height: 100vh;
@@ -135,9 +185,9 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: url('./images/background-img.jpeg') center/cover no-repeat;
     z-index: -1;
-    animation: gradientShift 8s ease infinite;
+    filter: brightness(0.6) contrast(1.1);
 }
 
 @keyframes gradientShift {
@@ -150,6 +200,14 @@ body {
     color: white;
     z-index: 1;
     animation: slideUp 0.8s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0px);
+    padding: 3rem 4rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 @keyframes slideUp {
@@ -216,14 +274,14 @@ section {
 
 .section-subtitle {
     text-align: center;
-    color: var(--text-light);
+    color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 3rem;
 }
 
 /* ========== BRANCHES SECTION ========== */
 .branches {
-    background-color: var(--light-bg);
+    background-color: var(--bg-color);
 }
 
 .branches-grid {
@@ -234,12 +292,13 @@ section {
 }
 
 .branch-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
     transform: translateY(0);
+    border: 1px solid var(--border-color);
 }
 
 .branch-card:hover {
@@ -276,7 +335,7 @@ section {
 }
 
 .branch-info p {
-    color: var(--text-light);
+    color: var(--text-muted);
     margin-bottom: 0.5rem;
 }
 
@@ -300,8 +359,9 @@ section {
 
 /* ========== DIRECTOR SECTION ========== */
 .director {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: var(--bg-color);
     padding: 4rem 0;
+    border-top: 1px solid var(--border-color);
 }
 
 .director-content {
@@ -336,7 +396,7 @@ section {
 
 .director-name {
     font-size: 2.5rem;
-    color: var(--text-dark);
+    color: var(--text-color);
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
@@ -357,7 +417,7 @@ section {
 
 .director-quote {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-muted);
     line-height: 1.8;
     border-left: 4px solid var(--primary-color);
     padding-left: 1.5rem;
@@ -413,7 +473,7 @@ section {
 
 .coming-soon-subtext {
     font-size: 0.95rem;
-    color: var(--text-light);
+    color: var(--text-muted);
     margin-top: 0.5rem;
 }
 
@@ -436,7 +496,7 @@ section {
 
 /* ========== TREATMENTS SECTION ========== */
 .treatments {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: var(--bg-color);
 }
 
 .treatments-grid {
@@ -478,13 +538,13 @@ section {
 }
 
 .treatment-card p {
-    color: var(--text-light);
+    color: var(--text-muted);
     line-height: 1.6;
 }
 
 /* ========== GALLERY SECTION ========== */
 .gallery {
-    background-color: var(--light-bg);
+    background-color: var(--bg-color);
 }
 
 .gallery-tabs {
@@ -498,7 +558,7 @@ section {
 .tab-button {
     padding: 0.7rem 1.5rem;
     border: 2px solid var(--primary-color);
-    background-color: white;
+    background-color: var(--card-bg);
     color: var(--primary-color);
     border-radius: 25px;
     cursor: pointer;
@@ -566,10 +626,163 @@ section {
     font-weight: 600;
 }
 
+/* ========== SURGEONS SECTION ========== */
+.surgeons {
+    background: var(--bg-color);
+    padding: 4rem 0;
+}
+
+.surgeons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.surgeon-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.surgeon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.surgeon-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background: var(--primary-color);
+}
+
+.surgeon-info {
+    padding: 2rem;
+}
+
+.surgeon-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.surgeon-specialization {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.surgeon-qualification {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ========== TESTIMONIALS SECTION ========== */
+.testimonials {
+    background: var(--bg-color);
+    padding: 4rem 0;
+}
+
+.testimonials-scroll {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+.testimonials-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.testimonials-scroll::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    border-radius: 10px;
+}
+
+.testimonials-scroll::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.testimonials-scroll::-webkit-scrollbar-thumb:hover {
+    background: #004a99;
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    min-width: 320px;
+    flex-shrink: 0;
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 102, 204, 0.2);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.testimonial-author {
+    flex: 1;
+}
+
+.testimonial-name {
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.testimonial-stars {
+    color: #ffc107;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.testimonial-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
 /* ========== CONTACT SECTION ========== */
 .contact {
     background: linear-gradient(135deg, var(--primary-color) 0%, #004a99 100%);
     color: white;
+}
+
+body.dark-mode .contact {
+    background: linear-gradient(135deg, #1a3a66 0%, #0f2544 100%);
 }
 
 .contact .section-title,
@@ -594,6 +807,7 @@ section {
     border-radius: var(--border-radius);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
 }
 
 .form-group {
@@ -604,6 +818,7 @@ section {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: white;
 }
 
 .form-group input,
@@ -618,6 +833,7 @@ section {
     background-color: rgba(255, 255, 255, 0.95);
     color: var(--text-dark);
     transition: var(--transition);
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -856,6 +1072,32 @@ section {
     .tab-button {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
+    }
+
+    .appointment-form {
+        padding: 1.5rem;
+    }
+
+    .appointment-container {
+        gap: 1.5rem;
+    }
+
+    .quick-contact {
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .submit-button {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 1.5rem 0;
     }
 }
 
