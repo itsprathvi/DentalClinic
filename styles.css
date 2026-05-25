@@ -807,7 +807,7 @@ body.dark-mode .contact {
     border-radius: var(--border-radius);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 80%;
+    width: 90%;
     box-sizing: border-box;
 }
 
