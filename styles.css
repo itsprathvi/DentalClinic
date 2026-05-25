@@ -819,9 +819,11 @@ body.dark-mode .contact {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: white;
     font-size: 1rem;
     line-height: 1.4;
+    /* Automatically switches between light text and dark text */
+    color: white; 
+    transition: var(--transition);
 }
 
 .form-group input,
@@ -829,29 +831,42 @@ body.dark-mode .contact {
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
-    border: none;
-    border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
     line-height: 1.5;
-    background-color: rgba(255, 255, 255, 0.95);
-    color: var(--text-dark);
-    transition: var(--transition);
     box-sizing: border-box;
     min-height: 44px;
     resize: vertical;
+    border-radius: 8px;
+
+    /* Dynamic Theme Mapping */
+    /* Uses card-bg or bg-color so inputs contrast against your pages */
+    background-color: var(--card-bg); 
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
 .form-group textarea {
     min-height: 120px;
 }
 
+/* Focus States */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    background-color: white;
-    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.3);
+    /* Replaced hardcoded color with your --accent-color variable */
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.3); 
+    border-color: var(--accent-color);
+}
+
+/* Placeholder styling for all form fields */
+.form-group input::placeholder,
+.form-group select::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.8; /* Ensures cross-browser consistency */
 }
 
 .submit-button {
