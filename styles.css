@@ -822,6 +822,8 @@ body.dark-mode .contact {
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: white;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 .form-group input,
@@ -833,10 +835,17 @@ body.dark-mode .contact {
     border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
+    line-height: 1.5;
     background-color: rgba(255, 255, 255, 0.95);
     color: var(--text-dark);
     transition: var(--transition);
     box-sizing: border-box;
+    min-height: 44px;
+    resize: vertical;
+}
+
+.form-group textarea {
+    min-height: 120px;
 }
 
 .form-group input:focus,
@@ -1024,6 +1033,31 @@ body.dark-mode .contact {
         grid-template-columns: 1fr;
     }
 
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+        min-height: 42px;
+        line-height: 1.5;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+        line-height: 1.4;
+    }
+
+    .submit-button {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+        min-height: 42px;
+    }
+
+    .form-group {
+        margin-bottom: 1.2rem;
+    }
+
     .director-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1078,25 +1112,42 @@ body.dark-mode .contact {
     }
 
     .appointment-form {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
 
     .appointment-container {
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 
     .quick-contact {
-        padding: 1.5rem;
+        padding: 1.2rem;
         border-radius: 10px;
     }
 
     .form-group {
-        margin-bottom: 1rem;
+        margin-bottom: 0.9rem;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+        margin-bottom: 0.35rem;
+        line-height: 1.4;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.65rem;
+        font-size: 0.9rem;
+        border-radius: 7px;
+        min-height: 40px;
+        line-height: 1.5;
     }
 
     .submit-button {
-        padding: 0.8rem;
-        font-size: 0.9rem;
+        padding: 0.75rem;
+        font-size: 0.85rem;
+        min-height: 40px;
     }
 
     section {
@@ -1111,6 +1162,16 @@ body.dark-mode .contact {
 
 /* ========== EXTRA SMALL DEVICES (352px and below) ========== */
 @media (max-width: 360px) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .contact {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     .hero {
         height: 60vh;
         padding: 1rem 0;
@@ -1171,6 +1232,12 @@ body.dark-mode .contact {
 
     .appointment-container {
         gap: 1rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
     }
 
     .appointment-form {
@@ -1179,6 +1246,8 @@ body.dark-mode .contact {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+        overflow-x: hidden;
+        margin: 0 auto;
     }
 
     .form-group {
@@ -1188,6 +1257,7 @@ body.dark-mode .contact {
     .form-group label {
         font-size: 0.9rem;
         margin-bottom: 0.3rem;
+        line-height: 1.4;
     }
 
     .form-group input,
@@ -1199,6 +1269,12 @@ body.dark-mode .contact {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+        min-height: 40px;
+        line-height: 1.5;
+    }
+
+    .form-group textarea {
+        min-height: 100px;
     }
 
     .submit-button {
@@ -1213,6 +1289,10 @@ body.dark-mode .contact {
     .quick-contact {
         gap: 1rem;
         padding: 1rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
 
     .quick-contact h3 {
@@ -1223,6 +1303,11 @@ body.dark-mode .contact {
     .contact-method {
         gap: 1rem;
         padding: 1rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        margin: 0 auto;
     }
 
     .contact-method i {
