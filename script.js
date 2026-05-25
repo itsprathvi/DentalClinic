@@ -310,7 +310,7 @@ function populateBranchDropdown() {
 // Populate quick contact section
 function populateQuickContact() {
     const quickPhonesEl = document.getElementById('quickPhones');
-    const quickEmailsEl = document.getElementById('quickEmails');
+    // const quickEmailsEl = document.getElementById('quickEmails');
     const quickHoursEl = document.getElementById('quickHours');
 
     if (quickPhonesEl) {
@@ -325,17 +325,17 @@ function populateQuickContact() {
         quickPhonesEl.innerHTML = phoneHTML;
     }
 
-    if (quickEmailsEl) {
-        const emailHTML = `
-            <i class="fas fa-envelope"></i>
-            <div>
-                <h4>Email Us</h4>
-                <p><a href="mailto:${clinicConfig.generalContact.mainEmail}">${clinicConfig.generalContact.mainEmail}</a></p>
-                <p><a href="mailto:${clinicConfig.generalContact.appointmentEmail}">${clinicConfig.generalContact.appointmentEmail}</a></p>
-            </div>
-        `;
-        quickEmailsEl.innerHTML = emailHTML;
-    }
+    // if (quickEmailsEl) {
+    //     const emailHTML = `
+    //         <i class="fas fa-envelope"></i>
+    //         <div>
+    //             <h4>Email Us</h4>
+    //             <p><a href="mailto:${clinicConfig.generalContact.mainEmail}">${clinicConfig.generalContact.mainEmail}</a></p>
+    //             <p><a href="mailto:${clinicConfig.generalContact.appointmentEmail}">${clinicConfig.generalContact.appointmentEmail}</a></p>
+    //         </div>
+    //     `;
+    //     quickEmailsEl.innerHTML = emailHTML;
+    // }
 
     if (quickHoursEl) {
         const hoursTitle = quickHoursEl.querySelector('#hoursTitle');
