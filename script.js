@@ -762,7 +762,7 @@ document.head.appendChild(styleSheet);
 
 // Initialize theme from localStorage
 function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
         updateThemeIcon(true);
@@ -805,4 +805,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize theme on page load
 window.addEventListener('load', initializeTheme);
 
-console.log('SmileCare Dental - Website Loaded Successfully! ✨');
+console.log('Prabhu\'s Healthcare - Website Loaded Successfully! ✨');

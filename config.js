@@ -115,6 +115,12 @@ const clinicConfig = {
     // Surgeons/Doctors Information
     surgeons: [
         {
+            name: "Dr. Pragathi",
+            specialization: "Chief Dental Surgeon",
+            image: "./images/Pragathi.jpg",
+            qualification: "BDS, MDS"
+        },
+        {
             name: "Dr. Tejkran shetty",
             specialization: "Oral and Maxillofacial Surgeon & Implantologist",
             image: "./images/tejkar.jpeg",
@@ -133,10 +139,10 @@ const clinicConfig = {
             qualification: "BDS, MDS"
         },
         {
-            name: "Dr. Supriya Nayak",
+            name: "Dr. Supriya Nayak, PT",
             specialization: "Physiotherapy",
             image: "./images/supriya.jpeg",
-            qualification: "PT, BPT"
+            qualification: "BPT"
         },
         {
             name: "Dr. Raksha Prabhu",
