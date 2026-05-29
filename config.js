@@ -117,8 +117,8 @@ const clinicConfig = {
         {
             name: "Dr. Pragathi",
             specialization: "Chief Dental Surgeon",
-            image: "./images/Pragathi.jpg",
-            qualification: "BDS, MDS"
+            image: "./images/pragathi.jpeg",
+            qualification: "BDS"
         },
         {
             name: "Dr. Tejkran shetty",
@@ -139,7 +139,7 @@ const clinicConfig = {
             qualification: "BDS, MDS"
         },
         {
-            name: "Dr. Supriya Nayak, PT",
+            name: "Dr. Supriya Nayak PT",
             specialization: "Physiotherapy",
             image: "./images/supriya.jpeg",
             qualification: "BPT"
@@ -180,7 +180,7 @@ const clinicConfig = {
         },
         {
             name: "Shreyas Nayak",
-            image: "./images/Shreyas.jpeg",
+            image: "./images/shreyas.jpeg",
             rating: 5,
             experience: "Exceptional orthodontic treatment in Ajekar! The team is friendly and the clinic is very clean. Worth every penny!"
         }
@@ -294,7 +294,7 @@ const clinicConfig = {
 
     // Footer Content
     footer: {
-        about: "Providing exceptional dental care with modern technology and compassionate service to both Ajekar and Bailur communities since 2020.",
+        about: "Providing exceptional dental care with modern technology and compassionate service to both Bailur and Ajekar communities since 2025.",
         quickLinks: [
             { label: "Home", href: "#home" },
             { label: "Director", href: "#director" },
@@ -312,8 +312,8 @@ const clinicConfig = {
         copyright: "2026",
         copyrightText: "Prabhu's Healthcare. All rights reserved.",
         legalLinks: [
-            { label: "Privacy Policy", href: "#" },
-            { label: "Terms of Service", href: "#" }
+            { label: "Privacy Policy", href: "https://www.freeprivacypolicy.com/live/943d1471-c9e9-47fe-9b3a-f56971881bf8" },
+            { label: "Terms of Service", href: "https://www.shopify.com/tools/policy-generator/show/SxhJQRYkvjVq--8cDMFO3kjSfkjnJ+--M7arliXyWHLEizKL6c22YA==.pdf" }
         ]
     },
 
